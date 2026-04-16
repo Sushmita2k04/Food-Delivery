@@ -1,69 +1,35 @@
 import React from "react"
+import { MdFastfood } from "react-icons/md";
+import { IoSearch } from "react-icons/io5";
+import { FaShoppingCart } from "react-icons/fa";
 
 function Navbar() {
   return (
-    <div>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
-        <div className="container-fluid">
-          <a className="navbar-brand" href="#">Navbar</a>
+    <div className="d-flex align-items-center justify-content-between px-4 py-2 ">
 
-          <button 
-            className="navbar-toggler" 
-            type="button" 
-            data-bs-toggle="collapse" 
-            data-bs-target="#navbarSupportedContent"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
+      {/* Logo */}
+      <div className="mt-2 bg-light p-2 rounded-2 text-danger shadow-sm">
+        <MdFastfood size={18} />
+      </div>
 
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              
-              <li className="nav-item">
-                <a className="nav-link active" href="#">Home</a>
-              </li>
+      {/* Slim Search Bar */}
+      <form className="w-50 d-flex align-items-center bg-white px-2 py-1 rounded-1 shadow-sm">
+        <IoSearch size={18} className="text-danger me-2" />
+        <input
+          type="text"
+          className="form-control border-0 shadow-none py-0"
+          placeholder="Search food..."
+        />
+      </form>
 
-              <li className="nav-item">
-                <a className="nav-link" href="#">Link</a>
-              </li>
+      {/* Cart */}
+      <div className=" mt-2 bg-light p-1 rounded text-danger shadow-sm position-relative">
+        <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          0
+        </span>
+        <FaShoppingCart size={22} />
+      </div>
 
-              <li className="nav-item dropdown">
-                <a 
-                  className="nav-link dropdown-toggle" 
-                  href="#" 
-                  role="button" 
-                  data-bs-toggle="dropdown"
-                >
-                  Dropdown
-                </a>
-
-                <ul className="dropdown-menu">
-                  <li><a className="dropdown-item" href="#">Action</a></li>
-                  <li><a className="dropdown-item" href="#">Another action</a></li>
-                </ul>
-              </li>
-
-            </ul>
-
-            <form className="d-flex">
-              <input 
-                className="form-control me-2" 
-                type="search" 
-                placeholder="Search"
-              />
-
-              <button 
-                className="btn btn-outline-success" 
-                type="submit"
-              >
-                Search
-              </button>
-
-            </form>
-
-          </div>
-        </div>
-      </nav>
     </div>
   )
 }
