@@ -1,3 +1,7 @@
+import pizza1 from "./assets/Foods/pizza1.png"
+import pizza2 from "./assets/Foods/pizza2.png"
+import pizza3 from "./assets/Foods/pizza3.png"
+import Burger1 from "./assets/Foods/Burger1.png"
 const FoodData = [
   {
     id: 1,
@@ -5,7 +9,7 @@ const FoodData = [
     category: "Pizza",
     price: 199,
     rating: 4.5,
-    image: "https://source.unsplash.com/400x300/?pizza",
+    image: pizza1 ,
     description: "Classic cheese pizza with fresh basil"
   },
   {
@@ -14,7 +18,7 @@ const FoodData = [
     category: "Pizza",
     price: 249,
     rating: 4.6,
-    image: "https://source.unsplash.com/400x300/?pepperoni,pizza",
+    image: pizza2,
     description: "Loaded with pepperoni and cheese"
   },
   {
@@ -23,7 +27,7 @@ const FoodData = [
     category: "Burger",
     price: 99,
     rating: 4.2,
-    image: "https://source.unsplash.com/400x300/?veg-burger",
+    image: Burger1,
     description: "Crispy veg patty with fresh veggies"
   },
   {
