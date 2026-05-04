@@ -1,0 +1,59 @@
+{
+  "restaurants": [
+    {
+      "id": 1,
+      "name": "KFC",
+      "areaName": "Park Street Area",
+      "costForTwo": 450,
+      "cuisines": ["Burgers", "Fast Food", "Rolls & Wraps"],
+      "avgRating": 4.3,
+      "offer": "50% OFF",
+"deliveryTime": "45-50 mins",
+      "image": "https://res.cloudinary.com/dnwwemziv/image/upload/v1777613229/Chicken2_ngvghl.png"
+    },
+    {
+      "id": 2,
+      "name": "Domino's Pizza",
+      "areaName": "Howrah",
+      "costForTwo": 600,
+      "cuisines": ["Pizza", "Italian", "Fast Food"],
+      "avgRating": 4.2,
+      "offer": "50% OFF",
+"deliveryTime": "45-50 mins",
+      "image": "https://res.cloudinary.com/dnwwemziv/image/upload/v1777612929/pizza1_y9l8um.png"
+    },
+    {
+      "id": 3,
+      "name": "Burger King",
+      "areaName": "Salt Lake",
+      "costForTwo": 500,
+      "cuisines": ["Burgers", "American"],
+      "avgRating": 4.1,
+      "offer": "50% OFF",
+"deliveryTime": "45-50 mins",
+      "image": "https://res.cloudinary.com/dnwwemziv/image/upload/v1777612923/Burger1_p2yhdp.png"
+    },
+    {
+      "id": 4,
+      "name": "Biryani Blues",
+      "areaName": "Garia",
+      "costForTwo": 700,
+      "cuisines": ["Biryani", "Mughlai"],
+      "avgRating": 4.5,
+      "offer": "50% OFF",
+"deliveryTime": "45-50 mins",
+      "image": "https://res.cloudinary.com/dnwwemziv/image/upload/v1777612933/Chicken4_lsfa7u.png"
+    },
+    {
+      "id":5,
+      "name":"KFC",
+      "areaName" : "Park Street Area",
+      "costForTwo":700,
+      "cuisines":["Chicken","coke"],
+      "avgRating":4.0,
+      "offer": "50% OFF",
+"deliveryTime": "45-50 mins",
+      "image":"https://res.cloudinary.com/dnwwemziv/image/upload/v1777614690/image_xe1sss.png"
+    }
+  ]
+}

@@ -1,52 +1,98 @@
-import React from "react";
-import FoodData from "../FoodData";
+import React, { useEffect, useState } from "react";
 
-function FoodItems() {
+function FoodItems({ addToCart }) {
+
+  const [items, setItems] = useState([]);
+  const [search, setSearch] = useState("");
+
+  useEffect(() => {
+    fetch("http://localhost:5000/api/restaurants")
+      .then(res => res.json())
+      .then(data => setItems(data.restaurants))
+      .catch(err => console.error(err));
+  }, []);
+
+  const filteredItems = items.filter((item) =>
+    item.name.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
-    <div className="container mt-4">
+    <div style={{ padding: "20px" }}>
 
-      <div className="row">
+     
 
-        {FoodData.map((item) => (
+      {/* Grid */}
+      <div style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
+        gap: "20px"
+      }}>
+
+        {filteredItems.map((item) => (
           <div
             key={item.id}
-            className="col-6 col-sm-4 col-md-3 col-lg-2 mb-4"
+            style={{
+              border: "1px solid #ddd",
+              borderRadius: "10px",
+              overflow: "hidden"
+            }}
           >
-            <div
-              className="bg-light text-dark shadow-sm rounded p-2 h-100 d-flex flex-column align-items-center"
-              style={{ cursor: "pointer" }}
-            >
 
-              {/* Image */}
-              <img
-                src={item.image}
-                alt={item.name}
-                className="img-fluid rounded"
-                style={{
-                  height: "100px",
-                  width: "100%",
-                  objectFit: "cover"
-                }}
-              />
+            {/* Image */}
+            <img
+              src={item.image}
+              alt={item.name}
+              style={{
+                width: "100%",
+                height: "140px",
+                objectFit: "cover"
+              }}
+            />
 
-              {/* Name */}
-              <p className="mt-2 mb-0 fw-semibold text-center small">
+            {/* Content */}
+            <div style={{ padding: "10px" }}>
+
+              <p style={{ fontWeight: "bold", margin: "5px 0" }}>
                 {item.name}
               </p>
 
-              {/* Price */}
-              <p className="mb-0 text-success fw-bold">
-                ₹{item.price}
+              <p style={{ fontSize: "14px", color: "#555", margin: "3px 0" }}>
+                ⭐ {item.avgRating}
+                {item.deliveryTime && ` • ${item.deliveryTime}`}
               </p>
-              <button className="btn btn-danger">
+
+              <p style={{ fontSize: "13px", color: "#777", margin: "3px 0" }}>
+                {item.cuisines.join(", ")}
+              </p>
+
+              <p style={{ fontSize: "13px", color: "#777", margin: "3px 0" }}>
+                {item.areaName}
+              </p>
+
+              <p style={{ color: "green", fontWeight: "bold", margin: "5px 0" }}>
+                ₹{item.costForTwo}
+              </p>
+
+              <button
+                onClick={() => addToCart && addToCart(item)}
+                style={{
+                  width: "100%",
+                  padding: "8px",
+                  background: "red",
+                  color: "white",
+                  border: "none",
+                  borderRadius: "6px",
+                  cursor: "pointer"
+                }}
+              >
                 Add to Cart
               </button>
+
             </div>
           </div>
         ))}
 
       </div>
-
     </div>
   );
 }

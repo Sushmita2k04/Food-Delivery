@@ -2,6 +2,7 @@ import React from "react"
 import { MdFastfood } from "react-icons/md";
 import { IoSearch } from "react-icons/io5";
 import { FaShoppingCart } from "react-icons/fa";
+import "../App.css"
 
 function Navbar() {
   return (
