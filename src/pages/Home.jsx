@@ -1,11 +1,11 @@
 import Navbar from "../components/Navbar";
 import FoodItems from "../components/FoodItems";
 import Categories from "../Category";
-import "../App.css"
+import "./Home.css";
 
 function Home() {
     return (
-        <div className="bg-dark text-light min-vh-100">
+        <div className="Main-body">
 
             <Navbar />
 
@@ -17,9 +17,9 @@ function Home() {
                     return (
                         <div key={item.id} className="category-card">
                             {/* ✅ ICON (Correct way) */}
-                            <Icon size={30} />
+                            <Icon size={30} color="crimson" />
 
-                            <p style={{ marginTop: "5px", fontSize: "14px" }}>
+                            <p className="Items-name">
                                 {item.name}
                             </p>
                         </div>
@@ -28,7 +28,7 @@ function Home() {
 
             </div>
 
-            <FoodItems />
+        <FoodItems/>
 
         </div>
     );

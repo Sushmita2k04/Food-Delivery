@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Gloria+Hallelujah&family=Gochi+Hand&family=Inconsolata:wght@200..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #f4f6f9;
+    font-family:"Gloria Hallelujah", cursive;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar-container{
+    width: 100%;
+    background: #445263;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 16px 40px;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* ================= LOGO ================= */
+
+.navbar-logo{
+    background: white;
+    color: crimson;
+height: 7vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 12px rgba(220, 20, 60, 0.25);
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.navbar-logo:hover{
+    transform: translateY(-2px);
+}
+
+/* ================= SEARCH ================= */
+
+.navbar-search{
+    width: 55%;
+height: 6vh;
+    background: white;
+
+    display: flex;
+    align-items: center;
+
+    padding: 10px 16px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.search-icon{
+    color: crimson;
+    font-size: 20px;
+    margin-right: 12px;
+}
+
+.search-input{
+    font-family: "Gloria Hallelujah", cursive;
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    font-size: 15px;
+
+    background: transparent;
+   /* nimation: searchrun  3s 3s 0s infinite 0 type; */
+    color: #333;
+}
+.search-input{
+    
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink{
+
+    50%{
+        border-color: transparent;
+    }
+
+}
+.search-input::placeholder{
+    color: #888;
+}
+
+/* ================= CART ================= */
+
+.cart-profile{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 2vw;
+
+}
+
+.cart-container{
+    position: relative;
+height: 7vh;
+    background: white;
+    color: crimson;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 12px rgba(220, 20, 60, 0.25);
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.cart-container:hover{
+    transform: translateY(-2px);
+}
+
+/* ================= CART BADGE ================= */
+
+.cart-container span{
+    position: absolute;
+
+    top: -6px;
+    right: -6px;
+
+    min-width: 18px;
+    height: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: crimson;
+    color: white;
+
+    border-radius: 50%;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    padding: 2px;
+}
+.account img{
+    width: 4vw;
+   display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border:solid crimson;
+    border-radius: 50%;
+}
