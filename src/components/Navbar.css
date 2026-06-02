@@ -1,18 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Gloria+Hallelujah&family=Gochi+Hand&family=Inconsolata:wght@200..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     background-color: #f4f6f9;
-    font-family:"Gloria Hallelujah", cursive;
+    font-family: "Gloria Hallelujah", cursive;
 }
 
 /* ================= NAVBAR ================= */
 
-.navbar-container{
+.navbar-container {
     width: 100%;
     background: #445263;
     height: 10vh;
@@ -22,15 +23,15 @@ body{
 
     padding: 16px 40px;
 
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* ================= LOGO ================= */
 
-.navbar-logo{
+.navbar-logo {
     background: white;
     color: crimson;
-height: 7vh;
+    height: 7vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -46,15 +47,13 @@ height: 7vh;
     transition: 0.3s ease;
 }
 
-.navbar-logo:hover{
-    transform: translateY(-2px);
-}
+
 
 /* ================= SEARCH ================= */
 
-.navbar-search{
+.navbar-search {
     width: 55%;
-height: 6vh;
+    height: 6vh;
     background: white;
 
     display: flex;
@@ -64,16 +63,16 @@ height: 6vh;
 
     border-radius: 12px;
 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-.search-icon{
+.search-icon {
     color: crimson;
     font-size: 20px;
     margin-right: 12px;
 }
 
-.search-input{
+.search-input {
     font-family: "Gloria Hallelujah", cursive;
     width: 100%;
 
@@ -81,30 +80,30 @@ height: 6vh;
     outline: none;
 
     font-size: 15px;
-
     background: transparent;
-   /* nimation: searchrun  3s 3s 0s infinite 0 type; */
+
     color: #333;
 }
-.search-input{
-    
+
+.search-input {
     animation: blink 0.7s infinite;
 }
 
-@keyframes blink{
-
-    50%{
-        border-color: transparent;
-    }
-
-}
-.search-input::placeholder{
+.search-input::placeholder {
+    animation: typing 5s ease infinite;
     color: #888;
+}
+
+@keyframes typing {
+
+    50% {
+        color: crimson;
+    }
 }
 
 /* ================= CART ================= */
 
-.cart-profile{
+.cart-profile {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -112,9 +111,9 @@ height: 6vh;
 
 }
 
-.cart-container{
+.cart-container {
     position: relative;
-height: 7vh;
+    height: 7vh;
     background: white;
     color: crimson;
 
@@ -133,13 +132,16 @@ height: 7vh;
     transition: 0.3s ease;
 }
 
-.cart-container:hover{
+
+
+.navbar-logo:hover,
+.cart-container:hover {
     transform: translateY(-2px);
 }
 
 /* ================= CART BADGE ================= */
 
-.cart-container span{
+.cart-container span {
     position: absolute;
 
     top: -6px;
@@ -162,12 +164,29 @@ height: 7vh;
 
     padding: 2px;
 }
-.account img{
-    width: 4vw;
-   display: flex;
+
+.account img {
+    height: 8vh;
+    display: flex;
     align-items: center;
     justify-content: center;
 
-    border:solid crimson;
+    border: solid crimson;
     border-radius: 50%;
+
+}
+
+.account:hover {
+    transform: translate(10px);
+}
+
+
+
+@media all and (max-width:350) {
+
+    .navbar-search,
+    .cart-profile,
+    .account {
+        display: none;
+    }
 }
