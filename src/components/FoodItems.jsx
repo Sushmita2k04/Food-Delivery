@@ -9,8 +9,7 @@ function FoodItems({ addToCart }) {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-
-    fetch("http://localhost:5000/api/restaurants")
+    fetch("https://food-delivery-api.onrender.com/api/restaurants")
       .then(res => res.json())
       .then(data => setItems(data.restaurants))
       .catch(err => console.error(err));
