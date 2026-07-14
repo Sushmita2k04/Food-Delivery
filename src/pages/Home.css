@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Gloria+Hallelujah&family=Gochi+Hand&family=Inconsolata:wght@200..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
+:root {
+    --primary: #dc143c;
+    --secondary: #445263;
+    --background: #f4f6f9;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -44,14 +50,15 @@
     box-shadow: 0 1px 10px crimson;
     transition: 0.5s ease;
 }
-.category-card:hover{
 
-    transform:translateY(-3px);
+.category-card:hover {
+
+    transform: translateY(-3px);
 }
 
-.Items-name{
+.Items-name {
     font-size: 1.5vw;
     color: white;
     font-weight: 600;
-    overflow:hidden;
+    overflow: hidden;
 }

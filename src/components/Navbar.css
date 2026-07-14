@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Gloria+Hallelujah&family=Gochi+Hand&family=Inconsolata:wght@200..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
+/* ================= COLORS ================= */
+
+:root {
+    --primary: #dc143c;
+    --secondary: #445263;
+    --background: #f4f6f9;
+    --foreground: #222222;
+    --surface: #ffffff;
+
+    --shadow-light: rgba(0, 0, 0, 0.08);
+    --shadow-primary: rgba(199, 41, 72, 0.25);
+}
+
+/* ================= GLOBAL ================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +22,7 @@
 }
 
 body {
-    background-color: #f4f6f9;
+    background-color: var(--background);
     font-family: "Gloria Hallelujah", cursive;
 }
 
@@ -15,89 +30,69 @@ body {
 
 .navbar-container {
     width: 100%;
-    background: #445263;
+    background: var(--secondary);
     height: 10vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     padding: 16px 40px;
-
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px var(--shadow-light);
 }
 
 /* ================= LOGO ================= */
 
 .navbar-logo {
-    background: white;
-    color: crimson;
+    background: var(--background);
+    color: var(--primary);
     height: 7vh;
     display: flex;
     align-items: center;
     justify-content: center;
-
     padding: 12px;
-
     border-radius: 12px;
-
-    box-shadow: 0 4px 12px rgba(220, 20, 60, 0.25);
-
+    box-shadow: 0 4px 12px var(--shadow-light);
     cursor: pointer;
-
     transition: 0.3s ease;
 }
-
-
 
 /* ================= SEARCH ================= */
 
 .navbar-search {
     width: 55%;
     height: 6vh;
-    background: white;
-
+    background: var(--background);
     display: flex;
     align-items: center;
-
     padding: 10px 16px;
-
     border-radius: 12px;
-
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 12px var(--shadow-light);
 }
 
 .search-icon {
-    color: crimson;
+    color: var(--primary);
     font-size: 20px;
     margin-right: 12px;
 }
 
 .search-input {
-    font-family: "Gloria Hallelujah", cursive;
     width: 100%;
-
     border: none;
     outline: none;
-
-    font-size: 15px;
     background: transparent;
-
-    color: #333;
-}
-
-.search-input {
+    color: var(--foreground);
+    font-size: 15px;
+    font-family: "Gloria Hallelujah", cursive;
     animation: blink 0.7s infinite;
 }
 
 .search-input::placeholder {
+    color: var(--secondary);
     animation: typing 5s ease infinite;
-    color: #888;
 }
 
 @keyframes typing {
-
     50% {
-        color: crimson;
+        color: var(--primary);
     }
 }
 
@@ -108,42 +103,28 @@ body {
     justify-content: space-evenly;
     align-items: center;
     gap: 2vw;
-
 }
 
 .cart-container {
     position: relative;
     height: 7vh;
-    background: white;
-    color: crimson;
-
+    background: var(--background);
+    color: var(--primary);
     display: flex;
     align-items: center;
     justify-content: center;
-
     padding: 12px;
-
     border-radius: 12px;
-
-    box-shadow: 0 4px 12px rgba(220, 20, 60, 0.25);
-
+    box-shadow: 0 4px 12px var(--shadow-primary);
     cursor: pointer;
-
     transition: 0.3s ease;
 }
 
-
-
-.navbar-logo:hover,
-.cart-container:hover {
-    transform: translateY(-2px);
-}
 
 /* ================= CART BADGE ================= */
 
 .cart-container span {
     position: absolute;
-
     top: -6px;
     right: -6px;
 
@@ -154,8 +135,8 @@ body {
     align-items: center;
     justify-content: center;
 
-    background: crimson;
-    color: white;
+    background: var(--background);
+    color: var(--primary);
 
     border-radius: 50%;
 
@@ -165,26 +146,35 @@ body {
     padding: 2px;
 }
 
+/* ================= ACCOUNT ================= */
+
 .account img {
     height: 8vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border: solid crimson;
+    border: 2px solid var(--primary);
     border-radius: 50%;
-
+    transition: all 0.3s ease;
 }
 
-.account:hover {
-    transform: translate(10px);
+.account img:hover,
+.navbar-logo:hover,
+.cart-container:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px var(--shadow-primary);
 }
 
+/* ================= RESPONSIVE ================= */
 
+@media all and (max-width: 350px) {
 
-@media all and (max-width:350) {
+    .navbar-search {
+        width: 40%;
+        height: 5vh;
+    }
 
-    .navbar-search,
+    .cart-container {
+        height: 5vh;
+    }
+
     .cart-profile,
     .account {
         display: none;

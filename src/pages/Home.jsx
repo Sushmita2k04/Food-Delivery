@@ -9,8 +9,8 @@ function Home() {
 
             <Navbar />
 
-           <div className="MenuBar">
-    
+            <div className="MenuBar">
+
                 {Categories.map((item) => {
                     const Icon = item.icon;
 
@@ -28,7 +28,7 @@ function Home() {
 
             </div>
 
-        <FoodItems/>
+            <FoodItems />
 
         </div>
     );
